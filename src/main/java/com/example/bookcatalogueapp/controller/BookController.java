@@ -5,9 +5,8 @@ import com.example.bookcatalogueapp.dto.response.BookResponseDto;
 import com.example.bookcatalogueapp.mapper.RequestDtoMapper;
 import com.example.bookcatalogueapp.model.Book;
 import com.example.bookcatalogueapp.service.BookService;
-import java.util.List;
-
 import io.swagger.annotations.ApiOperation;
+import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 
 @RestController
 @RequestMapping("/books")
@@ -95,8 +93,8 @@ public class BookController {
     }
 
     @GetMapping("/most-successful")
-    @ApiOperation("Display a list of most successful books using partial search by author's name (successBookRate = " +
-            "soldAmount/publishedAmount)")
+    @ApiOperation("Display a list of most successful books using partial search by author's name"
+            + " (successBookRate = soldAmount/publishedAmount)")
     public List<BookResponseDto> getMostSuccessfulBooksByAuthorNamePartial(String authorNamePart) {
         return bookService.getMostSuccessfulBooksByAuthorNamePartial(authorNamePart);
     }
